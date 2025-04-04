@@ -8,6 +8,7 @@ import { Menu, ShoppingCart, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import SearchAutocomplete from "@/components/search-autocomplete"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import ApiStatus from "@/components/api-status"
 
 export default function SiteHeader() {
   const pathname = usePathname()
@@ -155,6 +156,9 @@ export default function SiteHeader() {
         <div className="ml-auto flex items-center gap-4 md:gap-6">
           <div className="hidden md:block">
             <SearchAutocomplete />
+          </div>
+          <div className="hidden md:block">
+            <ApiStatus />
           </div>
           <Link href="/cart" className="relative">
             <ShoppingCart className="h-5 w-5" />
