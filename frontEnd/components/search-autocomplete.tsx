@@ -12,79 +12,79 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { useOnClickOutside } from "@/hooks/use-click-outside"
 
-// Mock search results - in a real app, this would come from an API
+// Update the searchData array to use real images from free sources
 const searchData = [
   {
     id: 1,
     name: "Minecraft",
     category: "Games",
-    image: "/placeholder.svg?height=40&width=40",
+    image: "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=40",
   },
   {
     id: 2,
     name: "Microsoft 365",
     category: "Apps",
-    image: "/placeholder.svg?height=40&width=40",
+    image: "https://images.unsplash.com/photo-1633419461186-7d40a38105ec?q=80&w=40",
   },
   {
     id: 3,
     name: "Forza Horizon 5",
     category: "Games",
-    image: "/placeholder.svg?height=40&width=40",
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=40",
   },
   {
     id: 4,
     name: "Adobe Creative Cloud",
     category: "Apps",
-    image: "/placeholder.svg?height=40&width=40",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=40",
   },
   {
     id: 5,
     name: "Dune",
     category: "Movies & TV",
-    image: "/placeholder.svg?height=40&width=40",
+    image: "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?q=80&w=40",
   },
   {
     id: 6,
     name: "Halo Infinite",
     category: "Games",
-    image: "/placeholder.svg?height=40&width=40",
+    image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=40",
   },
   {
     id: 7,
     name: "Spotify",
     category: "Apps",
-    image: "/placeholder.svg?height=40&width=40",
+    image: "https://images.unsplash.com/photo-1614680376408-81e91ffe3db7?q=80&w=40",
   },
   {
     id: 8,
     name: "The Batman",
     category: "Movies & TV",
-    image: "/placeholder.svg?height=40&width=40",
+    image: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?q=80&w=40",
   },
   {
     id: 9,
     name: "Taylor Swift - Midnights",
     category: "Music",
-    image: "/placeholder.svg?height=40&width=40",
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=40",
   },
   {
     id: 10,
     name: "Surface Pro 9",
     category: "Devices",
-    image: "/placeholder.svg?height=40&width=40",
+    image: "https://images.unsplash.com/photo-1625842268584-8f3296236761?q=80&w=40",
   },
   {
     id: 11,
     name: "Xbox Series X",
     category: "Devices",
-    image: "/placeholder.svg?height=40&width=40",
+    image: "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?q=80&w=40",
   },
   {
     id: 12,
     name: "Project Hail Mary",
     category: "Books",
-    image: "/placeholder.svg?height=40&width=40",
+    image: "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=40",
   },
 ]
 

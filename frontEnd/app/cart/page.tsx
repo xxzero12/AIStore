@@ -18,21 +18,21 @@ const initialCartItems = [
     name: "Minecraft",
     price: 29.99,
     quantity: 1,
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=80",
   },
   {
     id: 3,
     name: "Forza Horizon 5",
     price: 59.99,
     quantity: 1,
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=80",
   },
   {
     id: 2,
     name: "Microsoft 365",
     price: 69.99,
     quantity: 1,
-    image: "/placeholder.svg?height=80&width=80",
+    image: "https://images.unsplash.com/photo-1633419461186-7d40a38105ec?q=80&w=80",
   },
 ]
 

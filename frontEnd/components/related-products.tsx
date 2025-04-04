@@ -10,7 +10,7 @@ const products = [
     category: "games",
     price: 29.99,
     rating: 4.8,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=200",
   },
   {
     id: 3,
@@ -18,7 +18,7 @@ const products = [
     category: "games",
     price: 59.99,
     rating: 4.9,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=200",
   },
   {
     id: 6,
@@ -26,7 +26,7 @@ const products = [
     category: "games",
     price: 59.99,
     rating: 4.4,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=200",
   },
   {
     id: 9,
@@ -34,7 +34,7 @@ const products = [
     category: "games",
     price: 39.99,
     rating: 4.3,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=200",
   },
   {
     id: 10,
@@ -42,7 +42,7 @@ const products = [
     category: "games",
     price: 39.99,
     rating: 4.5,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=200",
   },
 ]
 

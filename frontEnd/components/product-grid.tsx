@@ -5,7 +5,7 @@ import { Star } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
-// Mock data - in a real app, this would come from an API
+// Update the products array to use real images from free sources
 const products = [
   {
     id: 1,
@@ -13,7 +13,7 @@ const products = [
     category: "games",
     price: 29.99,
     rating: 4.8,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=200",
     badge: "Best Seller",
   },
   {
@@ -22,7 +22,7 @@ const products = [
     category: "apps",
     price: 69.99,
     rating: 4.7,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1633419461186-7d40a38105ec?q=80&w=200",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const products = [
     category: "games",
     price: 59.99,
     rating: 4.9,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=200",
     badge: "New",
   },
   {
@@ -39,7 +39,7 @@ const products = [
     category: "apps",
     price: 52.99,
     rating: 4.5,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=200",
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ const products = [
     category: "movies",
     price: 19.99,
     rating: 4.6,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?q=80&w=200",
   },
   {
     id: 6,
@@ -55,7 +55,7 @@ const products = [
     category: "games",
     price: 59.99,
     rating: 4.4,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=200",
   },
   {
     id: 7,
@@ -63,7 +63,7 @@ const products = [
     category: "apps",
     price: 9.99,
     rating: 4.7,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1614680376408-81e91ffe3db7?q=80&w=200",
   },
   {
     id: 8,
@@ -71,7 +71,7 @@ const products = [
     category: "movies",
     price: 24.99,
     rating: 4.5,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?q=80&w=200",
     badge: "Top Rated",
   },
   {
@@ -80,7 +80,7 @@ const products = [
     category: "music",
     price: 12.99,
     rating: 4.9,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=200",
   },
   {
     id: 10,
@@ -88,7 +88,7 @@ const products = [
     category: "devices",
     price: 999.99,
     rating: 4.6,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1625842268584-8f3296236761?q=80&w=200",
   },
   {
     id: 11,
@@ -96,7 +96,7 @@ const products = [
     category: "devices",
     price: 499.99,
     rating: 4.8,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?q=80&w=200",
     badge: "Limited Stock",
   },
   {
@@ -105,7 +105,7 @@ const products = [
     category: "books",
     price: 14.99,
     rating: 4.7,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=200",
   },
   {
     id: 13,
@@ -113,7 +113,7 @@ const products = [
     category: "entertainment",
     price: 14.99,
     rating: 4.9,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=200",
     badge: "Best Value",
   },
   {
@@ -122,7 +122,7 @@ const products = [
     category: "deals",
     price: 34.99,
     rating: 4.5,
-    image: "/placeholder.svg?height=200&width=200",
+    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=200",
     badge: "Sale",
   },
 ]

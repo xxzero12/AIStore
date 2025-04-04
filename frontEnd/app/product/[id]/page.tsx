@@ -8,7 +8,7 @@ import ProductReviews from "@/components/product-reviews"
 import RelatedProducts from "@/components/related-products"
 import SiteLayout from "@/components/site-layout"
 
-// Mock data - in a real app, this would come from an API
+// Update the products array to use real images from free sources
 const products = [
   {
     id: 1,
@@ -17,7 +17,7 @@ const products = [
     price: 29.99,
     rating: 4.8,
     reviewCount: 12543,
-    image: "/placeholder.svg?height=600&width=600",
+    image: "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=600",
     description:
       "Minecraft is a game about placing blocks and going on adventures. Explore randomly generated worlds and build amazing things from the simplest of homes to the grandest of castles. Play in creative mode with unlimited resources or mine deep into the world in survival mode, crafting weapons and armor to fend off dangerous mobs.",
     developer: "Mojang Studios",

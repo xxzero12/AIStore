@@ -26,7 +26,7 @@ export default function FeaturedProducts() {
           </div>
           <div className="hidden md:block">
             <Image
-              src="/placeholder.svg?height=300&width=500"
+              src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=500"
               width={500}
               height={300}
               alt="Xbox Game Pass Ultimate"
@@ -42,7 +42,12 @@ export default function FeaturedProducts() {
           <CardContent className="p-0">
             <Link href="/product/office-365" className="block">
               <div className="relative h-48">
-                <Image src="/placeholder.svg?height=200&width=400" alt="Microsoft 365" fill className="object-cover" />
+                <Image
+                  src="https://images.unsplash.com/photo-1633419461186-7d40a38105ec?q=80&w=400"
+                  alt="Microsoft 365"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="p-4">
                 <h3 className="text-xl font-bold">Microsoft 365</h3>
@@ -58,7 +63,12 @@ export default function FeaturedProducts() {
           <CardContent className="p-0">
             <Link href="/product/surface-pro" className="block">
               <div className="relative h-48">
-                <Image src="/placeholder.svg?height=200&width=400" alt="Surface Pro 9" fill className="object-cover" />
+                <Image
+                  src="https://images.unsplash.com/photo-1625842268584-8f3296236761?q=80&w=400"
+                  alt="Surface Pro 9"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="p-4">
                 <h3 className="text-xl font-bold">Surface Pro 9</h3>
@@ -74,7 +84,12 @@ export default function FeaturedProducts() {
           <CardContent className="p-0">
             <Link href="/product/windows-11" className="block">
               <div className="relative h-48">
-                <Image src="/placeholder.svg?height=200&width=400" alt="Windows 11" fill className="object-cover" />
+                <Image
+                  src="https://images.unsplash.com/photo-1624571409108-e9a41746af53?q=80&w=400"
+                  alt="Windows 11"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="p-4">
                 <h3 className="text-xl font-bold">Windows 11</h3>

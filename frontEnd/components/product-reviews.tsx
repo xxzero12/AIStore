@@ -16,7 +16,7 @@ const mockReviews = [
     id: 1,
     user: {
       name: "Alex Johnson",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=40",
       initials: "AJ",
     },
     rating: 5,
@@ -31,7 +31,7 @@ const mockReviews = [
     id: 2,
     user: {
       name: "Sam Wilson",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=40",
       initials: "SW",
     },
     rating: 4,
@@ -46,7 +46,7 @@ const mockReviews = [
     id: 3,
     user: {
       name: "Jamie Smith",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=40",
       initials: "JS",
     },
     rating: 5,

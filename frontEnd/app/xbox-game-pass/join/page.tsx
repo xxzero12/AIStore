@@ -364,7 +364,7 @@ export default function JoinGamePassPage() {
                             You will be redirected to PayPal to complete your payment.
                           </p>
                           <Image
-                            src="/placeholder.svg?height=40&width=150"
+                            src="https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?q=80&w=150"
                             alt="PayPal"
                             width={150}
                             height={40}

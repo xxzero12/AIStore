@@ -34,12 +34,17 @@ export default function XboxGamePassPage() {
             </div>
             <div className="hidden md:block">
               <div className="relative h-[400px] w-full overflow-hidden rounded-lg">
-                <Image src="/placeholder.svg?height=400&width=600" alt="Xbox Game Pass" fill className="object-cover" />
+                <Image
+                  src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?q=80&w=600"
+                  alt="Xbox Game Pass"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
         </div>
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=800&width=1600')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1600')] bg-cover bg-center opacity-20"></div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
@@ -92,14 +97,33 @@ export default function XboxGamePassPage() {
           <h2 className="mb-8 text-center text-3xl font-bold md:text-4xl">Featured Games</h2>
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {[
-              { title: "Starfield", image: "/placeholder.svg?height=300&width=300", badge: "New Release" },
-              { title: "Forza Horizon 5", image: "/placeholder.svg?height=300&width=300" },
-              { title: "Halo Infinite", image: "/placeholder.svg?height=300&width=300" },
-              { title: "Sea of Thieves", image: "/placeholder.svg?height=300&width=300" },
-              { title: "Microsoft Flight Simulator", image: "/placeholder.svg?height=300&width=300" },
-              { title: "Age of Empires IV", image: "/placeholder.svg?height=300&width=300" },
-              { title: "Minecraft", image: "/placeholder.svg?height=300&width=300" },
-              { title: "Gears 5", image: "/placeholder.svg?height=300&width=300" },
+              {
+                title: "Starfield",
+                image: "https://images.unsplash.com/photo-1581822261290-991b38693d1b?q=80&w=300",
+                badge: "New Release",
+              },
+              {
+                title: "Forza Horizon 5",
+                image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=300",
+              },
+              {
+                title: "Halo Infinite",
+                image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=300",
+              },
+              {
+                title: "Sea of Thieves",
+                image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=300",
+              },
+              {
+                title: "Microsoft Flight Simulator",
+                image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=300",
+              },
+              {
+                title: "Age of Empires IV",
+                image: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?q=80&w=300",
+              },
+              { title: "Minecraft", image: "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=300" },
+              { title: "Gears 5", image: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=300" },
             ].map((game, index) => (
               <div key={index} className="group relative overflow-hidden rounded-lg">
                 <div className="relative aspect-square overflow-hidden">

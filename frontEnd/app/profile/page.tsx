@@ -19,7 +19,7 @@ import SiteLayout from "@/components/site-layout"
 const userData = {
   name: "John Doe",
   email: "john.doe@example.com",
-  avatar: "/placeholder.svg?height=100&width=100",
+  avatar: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=100",
   initials: "JD",
   memberSince: "January 2020",
   purchases: [
@@ -28,21 +28,21 @@ const userData = {
       name: "Minecraft",
       date: "2023-10-15",
       price: 29.99,
-      image: "/placeholder.svg?height=60&width=60",
+      image: "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?q=80&w=60",
     },
     {
       id: 2,
       name: "Microsoft 365",
       date: "2023-09-01",
       price: 69.99,
-      image: "/placeholder.svg?height=60&width=60",
+      image: "https://images.unsplash.com/photo-1633419461186-7d40a38105ec?q=80&w=60",
     },
     {
       id: 3,
       name: "Forza Horizon 5",
       date: "2023-08-12",
       price: 59.99,
-      image: "/placeholder.svg?height=60&width=60",
+      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=60",
     },
   ],
   wishlist: [
@@ -50,13 +50,13 @@ const userData = {
       id: 4,
       name: "Halo Infinite",
       price: 59.99,
-      image: "/placeholder.svg?height=60&width=60",
+      image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=60",
     },
     {
       id: 5,
       name: "Surface Pro 9",
       price: 999.99,
-      image: "/placeholder.svg?height=60&width=60",
+      image: "https://images.unsplash.com/photo-1625842268584-8f3296236761?q=80&w=60",
     },
   ],
   paymentMethods: [
