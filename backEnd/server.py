@@ -5,6 +5,19 @@ from typing import List, Optional, Dict, Any
 from pydantic import BaseModel
 import uuid
 from datetime import datetime
+import sys
+import os
+
+# Add path to AI directory so we can import agent.py
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'ai', 'DataAgent'))
+
+# Import the agent
+try:
+    from agent import ask_agent
+except ImportError:
+    # Fallback function if agent.py doesn't exist or can't be imported
+    def ask_agent(query):
+        return "AI agent not available. This is a placeholder response."
 
 # Create FastAPI Models
 class Product(BaseModel):
@@ -27,6 +40,7 @@ class PurchaseRequest(BaseModel):
     developer: Optional[str] = None
     publisher: Optional[str] = None
 
+# Update the PurchaseResponse to include AI message
 class PurchaseResponse(BaseModel):
     transaction_id: str
     product_id: int
@@ -35,6 +49,7 @@ class PurchaseResponse(BaseModel):
     total_price: float
     purchase_date: str
     status: str
+    ai_message: Optional[str] = None  # Add this field
 
 # Create a FastAPI instance
 app = FastAPI(
@@ -110,7 +125,32 @@ async def purchase_product(request: PurchaseRequest):
     print(f"Total: ${total_price}")
     print(f"------------------------")
     
-    # Return purchase confirmation
+    # Call the AI agent with purchase details
+    product_name = request.name if request.name else "your product"
+    agent_prompt = f"""
+    Please send a trace into application insights for this purchase with the following details:
+    - Activity Type: Purchase
+    - Product ID: {request.product_id}
+    - Product Name: {product_name}
+    - Category: {request.category if request.category else "N/A"}
+    - Price: ${product_price:.2f}
+    - Quantity: {request.quantity}
+    - Total: ${total_price:.2f}
+    - Transaction ID: {transaction_id}
+    - Date: {datetime.now().isoformat()}
+    - Developer: {request.developer if request.developer else "N/A"}
+    - Publisher: {request.publisher if request.publisher else "N/A"}
+    - Rating: {request.rating if request.rating else "N/A"}
+    - Review Count: {request.review_count if request.review_count else "N/A"}
+    """
+    
+    try:
+        ai_response = ask_agent(agent_prompt)
+    except Exception as e:
+        print(f"Error calling AI agent: {str(e)}")
+        ai_response = "Thank you for your purchase!"
+    
+    # Return purchase confirmation with AI response
     return PurchaseResponse(
         transaction_id=transaction_id,
         product_id=request.product_id,
@@ -118,7 +158,8 @@ async def purchase_product(request: PurchaseRequest):
         quantity=request.quantity,
         total_price=total_price,
         purchase_date=datetime.now().isoformat(),
-        status="completed"
+        status="completed",
+        ai_message=ai_response  # Add the AI response to the response
     )
 
 if __name__ == "__main__":
