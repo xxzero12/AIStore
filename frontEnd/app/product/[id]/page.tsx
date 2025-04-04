@@ -1,9 +1,13 @@
+"use client";
+
 import Image from "next/image"
-import { Star, Heart, Share2 } from "lucide-react"
+import { useState } from "react"
+import { Star, Heart, Share2, X } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import ProductReviews from "@/components/product-reviews"
 import RelatedProducts from "@/components/related-products"
 import SiteLayout from "@/components/site-layout"
@@ -34,7 +38,51 @@ const products = [
 ]
 
 export default function ProductPage({ params }: { params: { id: string } }) {
-  const product = products.find((p) => p.id === Number.parseInt(params.id)) || products[0]
+  const [isPurchasing, setIsPurchasing] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [purchaseData, setPurchaseData] = useState<any>(null);
+  const product = products.find((p) => p.id === Number.parseInt(params.id)) || products[0];
+
+  const handleBuyNow = async () => {
+    setIsPurchasing(true);
+    
+    try {
+      // Include additional product details in the request
+      const productDetails = {
+        product_id: product.id,
+        quantity: 1,
+        name: product.name,
+        category: product.category,
+        price: product.price,
+        rating: product.rating,
+        review_count: product.reviewCount,
+        developer: product.developer,
+        publisher: product.publisher
+      };
+      
+      const response = await fetch("http://localhost:8000/api/purchase", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(productDetails)
+      });
+
+      if (!response.ok) {
+        throw new Error("Purchase failed");
+      }
+
+      const data = await response.json();
+      setPurchaseData(data);
+      setShowSuccessModal(true);
+      
+    } catch (error) {
+      console.error("Error purchasing product:", error);
+      alert("Purchase failed. Please try again.");
+    } finally {
+      setIsPurchasing(false);
+    }
+  };
 
   return (
     <SiteLayout>
@@ -104,8 +152,13 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                   <span className="sr-only">Share</span>
                 </Button>
               </div>
-              <Button variant="outline" className="w-full">
-                Buy now
+              <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={handleBuyNow}
+                disabled={isPurchasing}
+              >
+                {isPurchasing ? "Processing..." : "Buy now"}
               </Button>
             </div>
 
@@ -170,7 +223,49 @@ export default function ProductPage({ params }: { params: { id: string } }) {
           </TabsContent>
         </Tabs>
       </div>
+
+      {/* Purchase Success Modal */}
+      <Dialog open={showSuccessModal} onOpenChange={setShowSuccessModal}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Purchase Successful!</DialogTitle>
+            <DialogDescription>
+              Your transaction has been completed successfully.
+            </DialogDescription>
+          </DialogHeader>
+          
+          {purchaseData && (
+            <div className="p-4 space-y-4">
+              <div className="grid grid-cols-2 gap-2 text-sm">
+                <div className="font-medium">Product:</div>
+                <div>{purchaseData.product_name}</div>
+                
+                <div className="font-medium">Quantity:</div>
+                <div>{purchaseData.quantity}</div>
+                
+                <div className="font-medium">Total Price:</div>
+                <div>${purchaseData.total_price.toFixed(2)}</div>
+                
+                <div className="font-medium">Transaction ID:</div>
+                <div className="truncate">{purchaseData.transaction_id}</div>
+                
+                <div className="font-medium">Date:</div>
+                <div>{new Date(purchaseData.purchase_date).toLocaleString()}</div>
+              </div>
+              
+              <div className="flex justify-end">
+                <Button 
+                  onClick={() => setShowSuccessModal(false)}
+                  className="bg-green-600 hover:bg-green-700"
+                >
+                  Close
+                </Button>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </SiteLayout>
-  )
+  );
 }
 
